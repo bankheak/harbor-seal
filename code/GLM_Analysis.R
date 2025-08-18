@@ -127,6 +127,10 @@ cor.matrix
 ###########################################################################
 # PART 3: Run glmmTMB and AICc---------------------------------------------
   
+
+fittedModel<- glmmTMB(count ~ avgnoise + Vmag + time + ar1(0 | month), 
+                      data = full_data, family = poisson, zi = ~ 1) 
+
 # Run glmmTMB
 model0<- glmmTMB(seals ~ 1, data = full.data, 
                  family = nbinom2, zi = ~ 1)
